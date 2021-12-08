@@ -1,10 +1,13 @@
+import { useState } from "react";
+import Countdown from "./Components/Countdown";
 import "./styles.css";
 
 export default function App() {
+  const [hide, setHide] = useState(false);
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      {!hide && <Countdown initial={100} />}
+      <button onClick={() => setHide(!hide)}>Hide Stopwatch</button>
     </div>
   );
 }
